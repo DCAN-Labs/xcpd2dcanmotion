@@ -17,16 +17,16 @@ motion_data = cell(1,ngroups);
 % loop over FDs 
 % copy fields from hdf5 into temp struct then add to motion_data
 for i = 1:ngroups 
-fdgroup = string(h5i.Groups(i).Name);
-tmpstruct = struct();
-tmpstruct.skip = h5read(inFile,fdgroup + '/skip');
-tmpstruct.FD_threshold = h5read(inFile,fdgroup + '/threshold');
-tmpstruct.frame_removal = h5read(inFile,fdgroup + '/binary_mask');
-tmpstruct.total_frame_count = h5read(inFile,fdgroup + '/total_frame_count');
-tmpstruct.remaining_frame_count = h5read(inFile,fdgroup + '/remaining_total_frame_count');
-tmpstruct.remaining_seconds = h5read(inFile,fdgroup + '/remaining_seconds');
-tmpstruct.remaining_frame_mean_FD = h5read(inFile,fdgroup + '/remaining_frame_mean_FD');
-motion_data{1,i} = tmpstruct;
+    fdgroup = string(h5i.Groups(i).Name);
+    tmpstruct = struct();
+    tmpstruct.skip = h5read(inFile,fdgroup + '/skip');
+    tmpstruct.FD_threshold = h5read(inFile,fdgroup + '/threshold');
+    tmpstruct.frame_removal = h5read(inFile,fdgroup + '/binary_mask');
+    tmpstruct.total_frame_count = h5read(inFile,fdgroup + '/total_frame_count');
+    tmpstruct.remaining_frame_count = h5read(inFile,fdgroup + '/remaining_total_frame_count');
+    tmpstruct.remaining_seconds = h5read(inFile,fdgroup + '/remaining_seconds');
+    tmpstruct.remaining_frame_mean_FD = h5read(inFile,fdgroup + '/remaining_frame_mean_FD');
+    motion_data{1,i} = tmpstruct;
 end
 
 % save to file
