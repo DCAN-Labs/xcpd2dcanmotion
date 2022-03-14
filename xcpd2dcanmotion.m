@@ -29,6 +29,7 @@ tmpstruct.remaining_frame_mean_FD = h5read(inFile,fdgroup + '/remaining_frame_me
 motion_data{1,i} = tmpstruct;
 end
 
+% save to file
 [filepath,name,ext] = fileparts(inFile);
 outFile = strcat(outDir,'/',name,'_power_2014_FD_only.mat')
 save(outFile,'motion_data')
