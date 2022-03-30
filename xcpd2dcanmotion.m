@@ -3,7 +3,7 @@
 % Outputs a motion data file in DCANBOLDProc "*_power_2014_FD_only.mat" format  
 % Tested with hdf5 output of XCP-D unstable03112022a (commit 24e15c582e5dc193565aacb5fdfedf4b04253421)
 
-function xcpd2dcanmotion(inFile,outDir)
+function motion_data = xcpd2dcanmotion(inFile,outDir)
 
 % get h5info on FD groups (one group per FD increment)
 h5i = h5info(inFile,'/dcan_motion');
